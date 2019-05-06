@@ -1,0 +1,122 @@
+
+
+// Création du petit cercle
+.menu-icon{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    
+    border-radius: 50%;
+    
+    
+    span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 22px;
+        height: 2px;
+        
+        background-color: $menu-icon-color;
+        transform: translateX(-50%) translateY(-50%);
+        
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            display: block;
+            width: 22px;
+            height: 2px;
+            
+            background-color: $menu-icon-color;
+            transform: translateY(-6px);
+            transition: transform $duration;
+        }
+        
+        &::after{
+            transform: translateY(6px);
+        }
+        
+    }
+    
+    &:hover{
+        span::before{
+            transform: translateY(-8px);
+        }
+        span::after{
+            transform: translateY(8px);
+        }
+    }   
+    
+}
+
+
+.menu-icon-cross{
+    
+    transition: transform $duration;
+    
+    span::before, span::after{
+        transform-origin: 50% 50%;
+    }
+    
+    span{
+        z-index: 2;
+        transition: background $duration, transform $duration;
+    }
+    
+    svg{
+        z-index: 1;
+        position: relative;
+        fill: $menu-icon-bg;
+        stroke-width: 1px;
+        stroke: $menu-icon-color;
+        stroke-dasharray: 170; // le contour sera des "tirets", propriété 1 la taille des tirets, propriété 2 la taille de l'espacement des tirets
+        stroke-dashoffset: 170; // permet de décaler le tiret de 170px en retrait (on cache le contour du cercle)
+        transition: stroke-dashoffset $duration, transform $duration;
+    }
+    
+    &.is-opened{
+        transform: rotate(180deg);
+        span{
+            background: transparent;
+        }
+        span::before{
+            transform: translateY(0) rotate(45deg);
+        }
+        span::after{
+            transform: translateY(0) rotate(-45deg);         
+        }
+        svg{
+            transform: rotate(-180deg);
+            stroke-dashoffset: 0;
+        }
+        &:hover{
+            transform: rotate(90deg); // Effet sympa au hover de la croix
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

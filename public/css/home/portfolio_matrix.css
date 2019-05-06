@@ -1,0 +1,153 @@
+/* CSS DE L'EFFET MATRIX ET DU PORTFOLIO EN GRILLE */
+
+/* #3a3f44 ou (58 63 68) couleur gris bg (bootswatch) */
+/* #111214 Primary */
+/* #676c71 secondary*/
+/* #5690a3 info */
+/* #2b92f2 bleu de l'effet matrix */
+
+/* font-family: 'Noto Serif', serif;   FONT CLASSIQUE /*
+/* font-family: 'Poiret One', cursive; */
+
+* {
+  box-sizing: border-box;
+}
+
+canvas {
+    width: 100%;
+    height: 230%;
+    position: absolute;
+    padding: 0 auto;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+body {
+  font-family: 'Noto Serif', serif;
+  background: black;
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-size: 1.2em;
+  /*font-family: 'Poiret One', cursive;*/
+}
+
+#myPortfolio {
+  background: url("../../asset/textures/texture.png") rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  border: 2px solid #2b92f2;
+  box-shadow: -5px 5px 10px black;
+  z-index: 1;
+}
+#myPortfolio h1{
+  color: white;
+  font-size: 3.5em;
+  text-decoration: underline;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-auto-flow: row dense;
+}
+.portfolio h2{
+  color: white;
+}
+
+.project {
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.project__image{
+  border: 1mm ridge #2b92f2;
+  box-shadow: 5px 8px 12px black;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.project__image:hover{
+  -webkit-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+
+.project__name{
+  text-align: center;
+  border: 1mm ridge  #2b92f2;
+  border-radius: 4px;
+  box-shadow: 5px 8px 12px black;
+  padding: 2%;
+
+  transition: .3s ease-in-out;
+}
+.project__name:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+.description_link p{
+  padding-left: 10px;
+}
+
+h2 {
+  padding: 0;
+  color: #000;
+  margin: 0 0 5px;
+}
+.logo{
+  width: 60px;
+}
+
+/* Images des logo de languages*/
+.languages{
+  padding-left: 10px;
+  background-color:#111214;
+  border-top: 1px solid #2b92f2;
+  border-bottom: 1px solid #2b92f2;
+}
+
+.button_try{
+  margin-left: 10px;
+}
+
+
+.project__body {
+  overflow: hidden;
+}
+.project__body{
+  background-color:#111214;
+  border: 3px solid #2b92f2;
+  box-shadow: -5px 5px 10px black;
+  margin-bottom: 5px;
+}
+
+.project .project__body {
+  display: none;
+}
+
+.project__description{
+  padding-top: 1%;
+  border-top: 1px solid #2b92f2;
+}
+.project__description p{
+  margin-left: 1%;
+}
+
+
+@media screen and (min-width: 640px) {
+  .portfolio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project__body {
+    grid-column: span 3;
+  }
+}

@@ -1,0 +1,86 @@
+/* Style du calendrier */
+
+.calendar{
+    position: relative;
+}
+.calendar__table{
+    width: 100%;
+    /* 100vh vaut la hauteur total de l'écran du navigateur (tous navigateur), auquel on donne une marge de 300px*/
+    height: calc(100vh - 300px);
+}
+.calendar__table td{
+    padding: 10px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    width: 14.29%; /* 100 / 7 = 14.29  On divise par 7 (nb de jours de la semaine de notre calendrier) pour que chaque case soit de la même largeur */
+}
+.calendar__weekday{
+    font-weight: bold;
+    color: rgb(39, 144, 185);
+    font-size: 1.2em;
+}
+.calendar__day{
+    font-size: 1.1em;
+}
+/* On cible uniquement les jours qui ne font pas parti du mois en cours (class calendar__othermonth dynamique) */
+.calendar__othermonth .calendar__day{
+    opacity: 0.2;
+}
+.calendar__event{
+    font-size: 0.6em;
+}
+.calendar_event-hours{
+    margin-top: 1em;
+    font-size: 1.5em;
+    text-align: center;
+
+    border: 1px dotted rgb(84, 96, 100);; /* Encadre l'élement avec des pointillés de 1px */
+}
+.calendar_event-name{
+    font-size: 1.5em;
+}
+.calendar__button{
+    text-decoration: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    background-color: #007bff;
+    border-radius: 50%;
+    /*position: absolute;*/
+    bottom: 30px;
+    right: 50%;
+
+    transition: transform 0.3s;
+}
+.calendar__button:hover{
+    text-decoration: none;
+    color: #fff;
+    transform: scale(1.2);
+}
+.calendar_title{
+    text-align: center;
+    color: white;
+    font-size: 3.5em;
+}
+.calendar__success{
+    text-align: center;
+    /*padding: 0 10% 0 10%;*/
+}
+.calendar_months{
+    float: right;
+}
+.info__date{
+    margin-left: 20px;
+}
+.calendar__today{
+    font-size: 1.4em;
+    color: rgb(218, 137, 255);
+    background-color:  #0062ca;
+}
+.btn__delete{
+    float: right;
+}

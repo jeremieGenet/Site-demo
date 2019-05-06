@@ -1,0 +1,30 @@
+// C'est ici que j'écrit le CSS et il sera compilé dans style.Generate.css
+// On doit donc lier le fichier style.Generate.css dans index.html pour que cela fonctionne
+
+// Fonts
+$primaryFont: 'Baloo Bhaijaan';
+$logoFont:'Pacifico';
+
+// Colors
+$menu-icon-bg: #2b92f2;
+$menu-icon-color: #FFF;
+
+
+$duration: 0.5s;
+
+// Helpers (permet d'appliquer la classe clearfix à un élément une div par ex, et cela fait disparaitre les float, flottement à l'élément auquel on l'applique)
+.clearfix:before, .clearfix:after{
+    content:"";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+body{
+    background-color: #111214;
+}
+.container{
+    height: 70vh;
+}
+
+@import "menu";

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+
+/* #00ffff bleu */
+/* #ff005b rouge */
+
+.container{
+
+    height: 75vh;
+    background: url('../../asset/neon/black_texture.jpg');
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+    
+    position: relative;
+    
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.neon{
+    position: absolute;
+    top: 20vh;
+    
+    /*transform: translate(-10%, -10%);*/
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 9em;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 25px #ff005b;
+    
+    animation: typing-text 1.5s steps(11), blink 0.5s infinite alternate;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	border-right: 3px solid rgba(0,0,0,0.5); /* Pour afficher la barre d'écriture */
+}
+
+.neon::after{
+    content: attr(data-text); /* On agit sur l'attribut du h1 dans le HTML */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 0 20px;
+    z-index: -1;
+    color: #ff005b; 
+    filter: blur(6px);
+}
+
+.neon::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #ff005b;
+    z-index: -2;
+    opacity: 0.11;
+    filter: blur(500px);
+}
+
+.neon:hover{
+    content: '';
+    /*filter: contrast(0.5);*/
+    /*filter: brightness(2);*/
+    /*filter: blur(1px);*/
+    /*filter: sepia(0.5);*/
+    /*filter: saturate(0.5);*/
+    filter: grayscale(0.7);
+    transition: all 0.5s ease-in;
+}
+
+@keyframes typing-text {
+	from {
+		width: 0;
+	}
+	to {
+		width: 11ch;
+	}
+}
+
+@keyframes blink {
+	from {
+		border-color: transparent;
+	}
+	to {
+		border-color: #000;
+	}
+}
