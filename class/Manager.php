@@ -1,22 +1,20 @@
 <?php
 namespace App;
 
-use PDO; // IMPORTANT (comme on a un namespace, il faut déclarer l'utilisation de PDO (classe native de php))
+use \PDO; // IMPORTANT (comme on a un namespace, il faut déclarer l'utilisation de PDO (classe native de php))
 
 // Permet de retourner les info de la bdd
 class Manager
 {
-    public function dbConnect()
+    public static function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=calendar;charset=utf8', 'root', '',[
-            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-            \PDO:: ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+        return new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8', 'root', '',[
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]);
-        return $db;
     }
 
-    // Permet du protèger une valeur (le champs d'un formulaire pour notre app) de l'injection de code
-    static function h(?string $value): string{ // ainsi $valeur est nullable
+    // Permet du protèger une valeur de l'injection de code (le champs d'un formulaire pour l' app Calendrier) 
+    public static function h(?string $value): string{ // ainsi $valeur est nullable
         if($value === null){
             return '';
         }

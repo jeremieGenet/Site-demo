@@ -5,7 +5,6 @@ namespace App\Calendar;
 class Month{
 
     public $days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-
     private $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
     public $month;
     public $year;
@@ -13,7 +12,6 @@ class Month{
 
     public function __construct(?int $month = null, ?int $year = null) // Les paramètres sont des entier 'nullable'
     {
-
         // Si le paramètre $month n'est pas donné (ou inférieur à 1 ou supérieur à 12) à la contruction de l'objet on lui donne le mois en cours
         if($month === null || $month < 1 || $month > 12){
             $month = intval(date('m'));

@@ -1,8 +1,6 @@
 <?php
 /*
-    UTILISATION D'UN ROUTEUR (d'une librairie externe) => altorouter
-    (pour que cela fonctionne il faut taper en invite de commande : "php -S localhost:8000 -t public"
-    pour ainsi se connecté au serveur et lui définir comme dossier racine le dossier "public")
+    ROUTE UTILISEES (Librairie externe) => altorouter
 */
 
 // 1. UTILISATION DE LA LIBRARIE "altorouter"
@@ -14,43 +12,50 @@ $router = new AltoRouter();
     ROUTING NAV BAR
 */
 // Routing à la racine du projet (Accueil du site)
-$router->map('GET', '/', 'home/home.php', 'home'); 
+$router->map('GET', '/', 'home.php', 'home'); 
 // Routing DEVELOPPEMENT
-//$router->map('GET', '/developpement', 'dev/portfolio_dev.php', 'portfolio_dev'); 
+$router->map('GET', '/developpement', 'dev/portfolio_dev.php', 'portfolio_dev'); 
 // Routing DESIGN
-//$router->map('GET', '/design', 'design/portfolio_design.php', 'portfolio_design'); 
-
-
-
-// Routing vers le blog
-$router->map('GET', '/blog', 'blog/article.php', 'article'); 
-// Routing du portfolio en js
-$router->map('GET', '/portfolio', 'portfolio/index.php', 'portfolio'); 
-// Route vers la page d'affichage du calendrier
-$router->map('GET', '/calendrier', 'calendrier/calendrier.php', 'calendrier');
-// Route vers la page d'accueil du jeu de bonneteau
-$router->map('GET', '/bonneteau', 'bonneteau/index.php', 'home_bonneteau');
-// Route vers la page d'accueil du jeu spaceInvaders
-$router->map('GET', '/spaceInvaders', 'spaceInvaders/spaceInvaders.php', 'spaceInvaders');
-
-
-$router->map('GET', '/dev/newSpace', 'dev/space.php', 'space');
+$router->map('GET', '/design', 'design/portfolio_design.php', 'portfolio_design'); 
+// Routing SUR MOI cv et info (One page)
+$router->map('GET', '/cv', 'cv/cv.php', 'cv'); 
 
 /*
-    ROUTING HOME (portfolio)
+    ROUTING DU BLOG
+*/
+// Accueil du blog (listing des posts)
+$router->map('GET', '/blog', 'blog/home_blog.php', 'home_blog'); 
+// Routing vers les post de la catégorie sélectionnée (à partir le la page post.php)
+$router->map('GET', '/blog_category/[*:slug]-[i:id]', 'blog/category.php', 'category');
+// Visu du Post sélectionner 
+$router->map('GET', '/blog/[*:slug]-[i:id]', 'blog/post.php', 'post');
+
+
+
+
+
+
+
+
+/*
+    ROUTING PORTFOLIO DEV
 */
 // Route pour le hamburger css/jquery
-$router->map('GET', '/menu-hamburger', 'hamburger/hamburger.php', 'hamburger');
+$router->map('GET', '/developpement/menu-hamburger', 'dev/hamburger/hamburger.php', 'hamburger');
 // Route pour le néon
-$router->map('GET', '/neon', 'neon/neon.php', 'neon');
+$router->map('GET', '/developpement/neon', 'dev/neon/neon.php', 'neon');
 // Route pour Fenêtre Modale
-$router->map('GET', '/fenetre-modale', 'fenetre_modale/index.php', 'fenetre_modale');
+$router->map('GET', '/developpement/fenetre-modale', 'dev/fenetre_modale/fenetre_modale.php', 'fenetre_modale');
 // Route du Snake
-$router->map('GET', '/snake', 'snake/snake.php', 'snake');
-
-
-
-
+$router->map('GET', '/developpement/snake', 'dev/snake/snake.php', 'snake');
+// Routing du portfolio en js
+$router->map('GET', '/developpement/portfolio', 'dev/portfolio/portfolio.php', 'portfolio'); 
+// Route vers la page d'affichage du calendrier
+$router->map('GET', '/developpement/calendrier', 'dev/calendrier/calendrier.php', 'calendrier');
+// Route vers la page d'accueil du jeu de bonneteau
+$router->map('GET', '/developpement/bonneteau', 'dev/bonneteau/index.php', 'home_bonneteau');
+// Route vers la page d'accueil du jeu spaceInvaders
+$router->map('GET', '/developpement/spaceInvaders', 'dev/spaceInvaders/spaceInvaders.php', 'spaceInvaders');
 
 /*
     ROUTING DES ERREURS
@@ -58,34 +63,31 @@ $router->map('GET', '/snake', 'snake/snake.php', 'snake');
 // Route vers erreur 404
 $router->map('GET', '/erreur', 'error/error.php', 'error'); 
 
-
 /* 
     ROUTING DU CALENDRIER 
 */
 // Route vers la pagination du calendrier (mois par mois)
-$router->map('GET', '/calendrier?month=[i:month]&year=[i:year]', 'calendrier/calendrier.php', 'calendrier_pagination');
+$router->map('GET', '/developpement/calendrier?month=[i:month]&year=[i:year]', 'dev/calendrier/calendrier.php', 'calendrier_pagination');
 // Route vers la page de visualisation/modification de l'évènement
-$router->map('GET', '/calendrier-edit-event=[i:id]', 'calendrier/editEvent.php', 'event');
+$router->map('GET', '/developpement/calendrier-edit-event=[i:id]', 'dev/calendrier/editEvent.php', 'event');
 // Soumet le formulaire de modification de l'évènement
-$router->map('POST', '/calendrier-edit-event=[i:id]', 'calendrier/editEvent.php', 'editEvent_post');
+$router->map('POST', '/developpement/calendrier-edit-event=[i:id]', 'dev/calendrier/editEvent.php', 'editEvent_post');
 // Soumet la suppression de l'évènement
-$router->map('POST', '/calendrier-delete-event=[i:id]', 'calendrier/editEvent.php', 'deleteEvent');
+$router->map('POST', '/developpement/calendrier-delete-event=[i:id]', 'dev/calendrier/editEvent.php', 'deleteEvent');
 // Route vers la page de créaction d'un évènement (via le bouton bleu sur le calendrier)
-$router->map('GET', '/calendrier-add-event', 'calendrier/addEvent.php', 'addEvent_button');
+$router->map('GET', '/developpement/calendrier-add-event', 'dev/calendrier/addEvent.php', 'addEvent_button');
 // Route vers la page de créaction d'un évènement (via le jour cliqué sur le calendrier)
-$router->map('GET', '/calendrier-add-event=[i:id]', 'calendrier/addEvent.php', 'addEvent_day');
+$router->map('GET', '/developpement/calendrier-add-event=[i:id]', 'dev/calendrier/addEvent.php', 'addEvent_day');
 // Soumet le formulaire de création d'évènement
-$router->map('POST', '/calendrier-add-event', 'calendrier/addEvent.php', 'addEvent_post');
+$router->map('POST', '/developpement/calendrier-add-event', 'dev/calendrier/addEvent.php', 'addEvent_post');
 
 /*
     ROUTING DU JEU DE BONNETEAU
 */
 // Route vers le jeu de bonneteau
-$router->map('POST', '/bonneteau', 'bonneteau/jeu.php', 'game_bonneteau');
+$router->map('POST', '/developpement/bonneteau', 'dev/bonneteau/jeu.php', 'game_bonneteau');
 // Route vers la page d'accueil du jeu de bonneteau
-$router->map('POST', '/bonneteau', 'bonneteau/config.php', 'config_bonneteau');
-
-
+$router->map('POST', '/developpement/bonneteau', 'dev/bonneteau/config.php', 'config_bonneteau');
 
 // 3. TEST DE LA ROUTE (en fonction de l'url, puisque ici méthode get)
 // match() vaudra 'false' si la route d'url n'est pas bonne (ne correspond à rien)

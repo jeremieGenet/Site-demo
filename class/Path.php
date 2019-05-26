@@ -6,13 +6,12 @@ namespace App;
 class Path{
 
     // Style bootstrap
-    private $style_bootstrap = "../css/bootstrap.min.css";
+    private $style_bootstrap = "../css/common/bootstrap/bootstrap.min.css";
 
     // Les attributs suivants servent au fonctionnement de bootstrap
-    private $jsJquery = "js/jquery.min.js";
-    private $jsPopper = "js/popper.min.js";
-    private $jsBootstrap = "js/bootstrap.min.js";
-    private $customJs = "js/custom.js";
+    private $jsJquery = "js/common/bootstrap/jquery.min.js";
+    private $jsPopper = "js/common/bootstrap/popper.min.js";
+    private $jsBootstrap = "js/common/bootstrap/bootstrap.min.js";
 
 
     public function getBootstrap(){
@@ -40,9 +39,6 @@ class Path{
         return $this->jsBootstrap;
     }
 
-    public function getCustomJs(){
-        return $this->customJs;
-    }
 
     /**
      * Permet d'afficher une page et de lui donner les paramètres utiles à sont affichage
@@ -55,7 +51,7 @@ class Path{
         // extract() permet d'extraire les données d'un tableau associatif
         extract($parameters); 
         // Permet d'inclure le fichier passé en param dans le dossier 'view'
-        include "../view/{$file}";
+        include "../views/dev/{$file}";
     }
 
 

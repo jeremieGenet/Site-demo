@@ -20,7 +20,7 @@ class Events extends Manager{
     // Retourne un tableau qui contient l'ensemble des évènements entre les dates de début et fin passées en paramètre
     public function getEventsBetween(\DateTime $start, \DateTime $end): array{
         // requête qui récup tous les évènements entre la date de début à 0h du matin et la date de fin à 23h59m59s (par ordre du plus récent au plus ancien)
-        $req = "SELECT * FROM events WHERE start BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59')}' ORDER BY start ASC";
+        $req = "SELECT * FROM calendar_events WHERE start BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59')}' ORDER BY start ASC";
         //dump($req);
         $statement = $this->db->query($req);
         $results = $statement->fetchAll();
@@ -50,7 +50,7 @@ class Events extends Manager{
 
     // Récup un évènement via son id (retourne un objet de type Event.php)
     public function find(int $id): Event{
-        $req = $this->db->query("SELECT * FROM events WHERE id= $id LIMIT 1");
+        $req = $this->db->query("SELECT * FROM calendar_events WHERE id= $id LIMIT 1");
         $req->setFetchMode(\PDO::FETCH_CLASS, Event::class); // MODIFICATION de la méthode fetch() dans le but de pouvoir récup les données à partir de la classe Events
         $result = $req->fetch();
         // Si le résultat de la req vaut false on jette une exeption, sinon on retourne le résutat
@@ -75,7 +75,7 @@ class Events extends Manager{
 
     // Insère un évènement dans notre la bdd
     public function create(Event $event): bool{
-        $rep = $this->db->prepare('INSERT INTO events (name, description, start, end) VALUES (?, ?, ?, ?)');
+        $rep = $this->db->prepare('INSERT INTO calendar_events (name, description, start, end) VALUES (?, ?, ?, ?)');
         return $rep->execute([
             $event->getName(),
             $event->getDescription(),
@@ -87,7 +87,7 @@ class Events extends Manager{
 
     // Met à jour un évènement dans notre la bdd
     public function update(Event $event): bool{
-        $rep = $this->db->prepare('UPDATE events SET name = ?, description = ?, start = ?, end = ? WHERE id = ?');
+        $rep = $this->db->prepare('UPDATE calendar_events SET name = ?, description = ?, start = ?, end = ? WHERE id = ?');
         return $rep->execute([
             $event->getName(),
             $event->getDescription(),
@@ -105,7 +105,7 @@ class Events extends Manager{
      * @return boolean
      */
     public function delete(Event $event): bool{
-        $rep = $this->db->prepare('DELETE FROM events WHERE id = ?');
+        $rep = $this->db->prepare('DELETE FROM calendar_events WHERE id = ?');
         return $rep->execute([
             $event->getId()
         ]);

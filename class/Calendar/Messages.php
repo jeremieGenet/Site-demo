@@ -14,7 +14,7 @@ Class Messages{
         if(isset($action)){
             return self::$message[$action];
         }else{
-            self::$message = 'il faut mettre qqch dans le paramètre de l\'objet, jérémie !';
+            self::$message = 'il faut mettre qqch dans les paramètres de l\'objet, jérémie !';
         }
     }
 

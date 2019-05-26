@@ -2,13 +2,43 @@
 /*
     PAGE DE TRAITEMENT DU ROUTING (les routes sont définis dans le fichier routing.php)
 */
-
 use App\Path;
 
 require '../vendor/autoload.php';
-require 'routing.php'; // On appel le fichier qui défini les routes
-
 $path = new Path;
+require 'routing.php'; // On appel le fichier qui défini les routes (altorouter)
+
+// Ligne qui permet le calcul du temps d'affichage d'une page
+define('DEBUG_TIME', microtime(true));
+
+// Librairie Whoops qui permet un affichage clair des erreurs
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+
+// Gestion des urls (ici le but est de supprimer le ?page=1 le l'url pour répondre aux exigences du référencement)
+if(isset($_GET['page']) && $_GET['page'] === '1'){
+    echo 'essai';
+    //$uri = $_SERVER['REQUEST_URI'];
+    $uri = explode('?', $_SERVER['REQUEST_URI'])[0]; // On récup la première partie de l'url (avant le ? de la variable 'page')
+    // On récup la ou les variables de l'url et on les supprime
+    $get = $_GET; 
+    unset($get['page']);
+    $query = http_build_query($get);
+    //dump($query); // Affiche la suite de l'url après le premier "?"
+    // Si la variable d'url n'est pas vide (si d'autre param d'url sont passé on les ajoutes, mais ?page=1 aura disparu)
+    if(!empty($query)){
+        $uri = $uri . '?' . $query;
+    }
+    http_response_code(301); // On signifie que c'est une url redirigée de façon permanente
+    header('Location: ' . $uri); // Redirection
+    exit();
+}
+
+
+
+
+
 
 //dump($match); // AFFICHE LES INFO SUR LE ROOTING
 
@@ -28,7 +58,7 @@ try{
 
             // On appelle le fichier ciblé dans le dossier view (et on le stock en mémoire tampon)
             ob_start();
-            require "../view/{$match['target']}";
+            require "../views/{$match['target']}";
             $content = ob_get_clean();
         }
 
@@ -43,6 +73,6 @@ try{
     $content = $errorMessage;
 }
 // On appelle notre template de base
-require '../view/inc/base.php';
+require '../views/inc/base.php';
 
 
