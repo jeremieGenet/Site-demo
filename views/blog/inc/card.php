@@ -17,12 +17,21 @@
     <p class="blog_content">
         <?= $post->getExcerpt() ?>
     </p>
-    <p>
-        <!-- Lien vers Le post (param slug et id) -->
-        <a href="<?= $router->generate('post', ['slug' => $post->getSlug() , 'id' => $post->getId() ]) ?>" 
-        class="btn btn-primary home_blog_button">
-            Voir plus
-        </a>
-    </p>
+    <div class="d-flex justify-content-between">
+        <div class="">
+            <p>
+                <!-- Lien vers Le post (param slug et id) -->
+                <a href="<?= $router->generate('post', ['slug' => $post->getSlug() , 'id' => $post->getId() ]) ?>" 
+                class="btn btn-primary home_blog_button">
+                    Voir plus
+                </a>
+            </p>
+        </div>
+        <div class="ml-auto">
+            <span class="react-like">
+                <!-- COMPOSANT REACT (voir js/blog/posts.js) -->
+            </span>
+        </div>
+    </div>
     </div>
 </div>

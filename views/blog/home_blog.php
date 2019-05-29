@@ -5,6 +5,7 @@ use App\Model\Post;
 
 $title = "Mon blog";
 $path->getStyle("../css/blog/blog.css");
+$path->getStyle("../css/common/font-awesome/css/all.min.css");
 
 // Connexion à la bdd
 $db = Manager::dbConnect();
@@ -29,7 +30,10 @@ $query = $db->query("SELECT * FROM blog_post ORDER BY created_at DESC LIMIT $per
 // Permet de récup la requete sous forme de classe et on lui donne la classe que l'on veut récup, (PDO::FETCH_OBJ permet lui de récup la req sous forme d'objet)
 $posts = $query->fetchAll(PDO::FETCH_CLASS, Post::class); 
 
+dump($posts);
 ?>
+
+
 
 
 <h1 class="title_home_blog">Liste des Articles</h1>
@@ -49,7 +53,7 @@ $posts = $query->fetchAll(PDO::FETCH_CLASS, Post::class);
     <?php foreach($posts as $post): ?>
     <div class="col-md-3 mb-3">
         <!-- HTML D'UN POST DE LA LISTE -->
-        <?php require 'card.php' ?>
+        <?php require 'inc/card.php' ?>
     </div>
     <?php endforeach ?>
 </div>
@@ -65,4 +69,15 @@ $posts = $query->fetchAll(PDO::FETCH_CLASS, Post::class);
         <a href="<?= $router->generate('home_blog') ?>?page=<?= $currentPage + 1 ?>" class="btn btn-info ml-auto btn-lg">Page suivante &raquo;</a>
     <?php endif ?>
 </div>
+
+
+
+<!-- On import REACT et REACT-DOM -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+<?php
+// Script js pour le composant REACT 'like'
+$path->getJs("../js/blog/posts.js");
+?>
 

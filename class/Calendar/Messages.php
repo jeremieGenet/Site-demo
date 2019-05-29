@@ -1,5 +1,5 @@
 <?php
-namespace App\calendar;
+namespace App\Calendar;
 
 // Permet l'affichage d'un message
 Class Messages{

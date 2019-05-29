@@ -84,10 +84,11 @@ $categories= $query->fetchAll();
                 <!-- CONTENU DU POST -->
                 <?= $post->getContent() ?>
             </p>
+            <a href="#" class="card-link">J'aime</a>
         </div>
         <div class="card-footer">
             <!-- Lien vers home_blog -->
-            <a href="<?= $router->generate('home_blog') ?>" class="card-link">Liste des articles &raquo;</a>
+            <a href="<?= $router->generate('home_blog') ?>" class="card-link">Retour à la liste des articles &raquo;</a>
         </div>
     </div>
     

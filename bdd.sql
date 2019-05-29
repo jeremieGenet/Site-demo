@@ -8,6 +8,8 @@ CREATE TABLE blog_post(
     slug VARCHAR(255) NOT NULL,
     content TEXT(650000) NOT NULL,
     created_at DATETIME NOT NULL,
+    likes INT DEFAULT NULL,
+    isLiked BOOLEAN NOT NULL,
     PRIMARY KEY (id)
 )
 

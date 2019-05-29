@@ -11,7 +11,7 @@ $path->getStyle("../css/design/portfolio_design.css");
 
 
 <!-- PORTFOLIO EN GRILLE -->
-<div class="container myPortfolio" id="myPortfolio">
+<div class="container" id="myPortfolio">
 
     <h1 class="text-center my-4">Mes réalisations en <strong>Design</strong></h1>
 

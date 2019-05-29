@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 
-use App\Helpers\Text;
+use App\helpers\Text;
 use \DateTime;
 
 
@@ -13,6 +13,8 @@ class Post{
     private $slug;
     private $content;
     private $created_at;
+    private $likes;
+    private $isLiked;
     private $categories = []; // liste des catégories
 
     public function getId(): ?int
@@ -38,6 +40,14 @@ class Post{
     public function getCreatedAt(): DateTime
     {
         return new DateTime($this->created_at);
+    }
+    public function getLike(): ?int
+    {
+        return $this->likes;
+    }
+    public function getIsLiked(): ?bool
+    {
+        return $this->isLiked;
     }
 
     // Retourne l'extrait de text

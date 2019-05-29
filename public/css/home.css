@@ -1,0 +1,111 @@
+/* rgb(38, 39, 40) gris foncé Template Slate*/
+
+/* 
+(font plus classique)
+font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+(font plus petite)
+font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 
+Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+*/
+.container-fluid{
+    background-image: linear-gradient(to right,rgba(27, 27, 27, 0.7), rgba(54, 11, 32, 0.95)), url('../asset/home/dev.jpg');
+    color: white;
+}
+
+h1, h2, h3{
+    font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    text-shadow: 5px 8px 10px black;
+}
+h1, h2{
+    font-size: 3.2em;
+    color: rgb(202, 211, 214);
+}
+
+
+.home{
+    padding: 2% 0 2% 0;
+}
+a{
+    color: white;
+    font-size: 1.05em;
+    transition: .3s ease-in-out;
+}
+a:hover{
+    color: rgb(111, 185, 255);
+    font-size: 1.1em;
+}
+
+.logo{
+    width: 90%;
+    padding: 10% 0 10% 0;
+}
+
+.description{
+    border-top: 1px solid black;
+    
+}
+.technos{
+    border-top: 1px solid black;
+}
+.design{
+    border-top: 1px solid black;
+}
+
+
+.surMoi{
+    background-image: linear-gradient(to left,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+    border-radius: 3% 0 0 3%;
+}
+.description_text{
+    background-image: linear-gradient(to right,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+    border-radius: 0 3% 3% 0;
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 1.2em;
+}
+
+.technos_dev{
+    background-image: linear-gradient(to left,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+    padding: 1% 0 0 1%;
+}
+.technos_logos{
+    background-image: linear-gradient(to right,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+}
+
+.design_text{
+    background-image: linear-gradient(to left,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+    padding: 2% 0 0 2%;
+}
+.design_logos{
+    background-image: linear-gradient(to right,rgba(105, 111, 116, 0.8), rgba(73, 69, 73, 0.05)), url("../../asset/home/transparent.png");
+}
+
+.description h3{
+    color: rgba(255, 161, 73, 0.8);
+}
+.description li{
+    list-style-type: square;
+}
+
+
+.surMoi{
+    padding: 1.5% 0 0 8%;
+
+}
+.surMoi_title{
+    padding-bottom: 8%;
+}
+#link_surMoi{
+    margin-top: 10%;
+    list-style: none;
+}
+
+
+.technos h3{
+    color: rgba(255, 161, 73, 0.8);
+}
+
+

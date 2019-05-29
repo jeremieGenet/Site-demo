@@ -1,5 +1,5 @@
 <?php
-namespace App\Helpers;
+namespace App\helpers;
 
 /* TRANSFORMATION/MANIPULATION DE TEXTE */
 class Text{

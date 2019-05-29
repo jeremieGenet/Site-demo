@@ -19,13 +19,14 @@ class Path{
     }
 
     // Renvoi une balise style (pour les fichiers css)
-    public function getStyle($file){
+    public function getStyle(string $file){
         echo '<link rel="stylesheet" href='. $file .'>';
     }
-
-    public function getJs($file){
-        echo '<script src='. $file .'></script>';
+    // Renvoi une balise script (pour les fichier Js)
+    public function getJs(string $file){
+        echo "<script src={$file}></script>";
     }
+    
 
     public function getJsJquery(){
         return $this->jsJquery;

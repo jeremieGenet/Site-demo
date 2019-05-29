@@ -113,7 +113,7 @@ $linkRouter = $router->generate('category',['slug' => $category->getSlug() , 'id
     <?php foreach($posts as $post): ?>
     <div class="col-md-3 mb-3">
         <!-- HTML D'UN POST DE LA LISTE -->
-        <?php require 'card.php' ?>
+        <?php require 'inc/card.php' ?>
     </div>
     <?php endforeach ?>
 </div>

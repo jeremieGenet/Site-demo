@@ -61,20 +61,25 @@ $path->getStyle("../css/dev/matrix.css");
                     <p class="description_top">
                         Ce <strong>site d'annonces</strong> est un site qui permet la location <strong>d'appartements/maisons</strong>. 
                         Un <strong>espace membres</strong> permet de s'inscrire comme <strong>locataire ou comme propriétaire</strong>.
+                        Dans cet espace, on retrouve les biens loués, et les annonces en possession pour les propriétaires.
                     </p>
                     <p>
-                        Le <strong>propriétaire</strong> peut alors créer des annonces et les illustrer avec des photos 
-                        (<strong>une image principale, et une collection d'image au besoin</strong>).
+                        Le <strong>propriétaire</strong> peut alors créer des annonces, et les illustrer avec des photos 
+                        (<strong>une image principale, et une collection d'image au besoin</strong>). Il peut aussi les modifier.
                     </p>
                     <p>
-                        Le <strong>locataire</strong> peut s'inscrire pour réserver une location d'un bien puis, 
-                        <strong>noter</strong> les appartements/maisons après son séjour.
+                        Si l' <strong>utilisateur</strong> souhaite loué un bien, il est alors invité à s'inscrire puis il a la possibilité de 
+                        <strong>noter</strong> l' appartement/maison après son séjour.
                     </p>
                     <p>
                         Les notes apparaîssent sur les biens dynamiquement, permettant aux futurs locataires de se forger une idée plus précise du bien.
                         Les appartements/maisons les mieux notés sont ainsi mis en avant.
                         Le site comporte <strong>une partie administration</strong> (avec restriction), pour permettre la modération des annonces,
                         et récupérer les statistiques des annonces les mieux notés.
+                    </p>
+                    <p>
+                        Pour y accéder il faut bien sûr être administrateur et taper 'admin' à la suite de l'url d'accueil du site.
+                        Pour s'y connecter il faut l'adresse email : <strong>'jamyjam82377@gmail.com'</strong> et le mot de passe <strong>'16641664'</strong>
                     </p>
                     <a href="http://jeremie-genet.fr" target="_blank">
                         <button type="text" class="btn btn-info text-primary my-2 button_try"><strong>Essayer moi !</strong></button>
@@ -590,7 +595,7 @@ $path->getStyle("../css/dev/matrix.css");
         </div>
         <!-- IA ZOMBIES -->
         <div class="project js-item" tabindex="0">
-            <img src="../asset/portfolio/screen-shot_dev/ia_zombies.jpg" alt="" class="project__image">
+            <img src="../asset/portfolio/screen-shot_dev/ia_zombies.JPG" alt="" class="project__image">
             <h2 class="project__name mt-2">Zombies en Lua</h2>
             
             <div class="project__body js-body">

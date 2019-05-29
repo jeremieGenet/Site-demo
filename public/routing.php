@@ -31,12 +31,6 @@ $router->map('GET', '/blog_category/[*:slug]-[i:id]', 'blog/category.php', 'cate
 $router->map('GET', '/blog/[*:slug]-[i:id]', 'blog/post.php', 'post');
 
 
-
-
-
-
-
-
 /*
     ROUTING PORTFOLIO DEV
 */

@@ -1,7 +1,7 @@
 <?php 
 use App\Calendar\Month;
 use App\Calendar\Events;
-use App\calendar\Messages;
+use App\Calendar\Messages;
 use App\Path;
 
 
