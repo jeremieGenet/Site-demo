@@ -84,12 +84,30 @@ $categories= $query->fetchAll();
                 <!-- CONTENU DU POST -->
                 <?= $post->getContent() ?>
             </p>
-            <a href="#" class="card-link">J'aime</a>
         </div>
         <div class="card-footer">
             <!-- Lien vers home_blog -->
             <a href="<?= $router->generate('home_blog') ?>" class="card-link">Retour à la liste des articles &raquo;</a>
+
+            <!-- Les 2 Attributs du span donnent le nombre de like et si l'article est liké -->
+            <span class="react-like" 
+                data-likes="<?= $post->getLike() ?>"
+                data-is-liked="<?= $post->getIsLiked() ?>"
+            >
+                <!-- COMPOSANT REACT (voir js/blog/posts.js) -->
+            </span>
         </div>
+
     </div>
     
 </div>
+
+<!-- On import REACT et REACT-DOM -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<!-- On import babel (transpillateur jsx)
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+ -->
+
+<!-- Script js pour le composant REACT 'like' -->
+<script src="../js/blog/posts.js"></script>

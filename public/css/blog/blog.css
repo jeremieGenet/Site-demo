@@ -32,6 +32,16 @@
     margin-top: 4%;
 }
 
+.like-in-react{
+    color: rgb(29, 143, 250);
+    font-size: 1.1em;
+    transition: .3s ease-in-out;
+}
+.like-in-react:hover{
+    color: rgb(111, 185, 255);
+    font-size: 1.12em;
+}
+
 
 /* CSS DE LA PAGE post.php */
 .post_img{

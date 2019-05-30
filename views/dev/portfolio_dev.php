@@ -154,8 +154,15 @@ $path->getStyle("../css/dev/matrix.css");
                     <p class="description_top">
                         Voici une <strong>application</strong> qui sert de <strong>calendrier et d'agenda</strong>. 
                         Elle permet de visualiser <strong>jours/mois/années</strong>,
-                        mais surtout permet dynamiquement de <strong>créer ou de supprimer des événements</strong>.
-                        Pour cela l'application est réliée à <strong>une base de donnée</strong>, et elle est gérer par une classe appellée calendrier.
+                        mais surtout permet dynamiquement de <strong>créer ou de supprimer des événements ou rendez-vous à la date souhaitée</strong>.
+                    </p>
+                    <p>
+                        Pour cela un bouton d'ajout (bouton bleu en haut à gauche) permet de créer un évenement qu'il est possible de modifié ou de supprimer. 
+                        Un agenda électronique gratuit!
+                    </p>
+                    <p>
+                        Pour cela l'application est réliée à <strong>une base de donnée</strong> administrée en Mysql, 
+                        et elle est gérer par des classes appellées calendrier, evenement et formulaire.
                     </p>
                     <a href="<?= $router->generate('calendrier') ?>">
                         <button type="text" class="btn btn-info text-primary my-2 button_try"><strong>Essayer moi !</strong></button>
@@ -196,10 +203,12 @@ $path->getStyle("../css/dev/matrix.css");
                 </div>
                 <div class="description_link">
                     <p class="description_top">
-                        Voici une représentation <strong>'un peu imaginée'</strong> du <strong>célèbre jeu de bonneteau</strong>, 
+                        Voici une représentation <strong>"un peu imaginée"</strong> du <strong>célèbre jeu de bonneteau</strong>, 
                         qui consite à trouver une carte sur les trois présentées face de dos, et ainsi remporter sa mise.
-                        Le jeu est entièrement développer <strong>en php vanilla (pas de POO)</strong> le but était de le faire fonctionner vite!
+                        Le jeu est entièrement développer <strong>en php "procédural" (pas de POO)</strong>, le but était de le faire fonctionner vite!
                         Il n'en reste pas moins qu'il était amusant à développer.
+                    </p>
+                    <p>
                         J'ai laissé le tableau de debug, car il reste un bug que je n'ai pas encore identifier mais il ne gêne en rien l'éxpérience.
                     </p>
                     <a href="<?= $router->generate('home_bonneteau') ?>">
@@ -237,9 +246,12 @@ $path->getStyle("../css/dev/matrix.css");
                 </div>
                 <div class="description_link">
                     <p class="description_top">
-                        Le but est de donner une indication claire à l'utilisateur lors de son interaction avec le <strong>bouton de hamburger</strong>,
+                        Ce petit projet a pour but de donner une indication claire à l'utilisateur lors de son interaction avec le <strong>bouton de hamburger</strong>,
                         afin de lui donner, de la façon la plus visuelle possible
                         un <strong>feedback</strong> sur son action et les possibilités à suivre (ici la fermeture du menu).
+                    </p>
+                    <p>
+                        Ici seulement du <strong>jQuery</strong> pour l'évenement de changement de classe html, sinon entierement en <strong>HTML et CSS</strong>;
                     </p>
                     <a href="<?= $router->generate('hamburger') ?>">
                         <button type="text" class="btn btn-info text-primary my-2 button_try"><strong>Essayer moi !</strong></button>
@@ -320,14 +332,14 @@ $path->getStyle("../css/dev/matrix.css");
                 <div class="description_link">
                     <p>
                         Une petite <strong>application</strong> qui copie le lecteur video <strong>YouTube</strong>.
-                        Entièrement développée avec <strong>React</strong> et l'api <strong>The Movie DB</strong>.
+                        Entièrement développée avec <strong>REACT</strong> et l'api de trailer vidéo <strong>"The Movie DB"</strong>.
                     </p>
                     <p>
                         La barre de recherche permet de trouver un trailer de film,
-                        et la colonne de proposition de film à droite est générer dynamiquement en fonction du film recherché.
+                        et la colonne de proposition de films à droite est générer dynamiquement en fonction du film recherché.
                     </p>
                     <p>
-                        Le projet n'est pas testable ici puisqu'il utilise NodeJs, mais le code est disponible sur mon GitHub.
+                        Le projet n'est pas testable ici, je ne l'ai pas encore intégré, mais le code est disponible sur mon GitHub.
                     </p>
                     <a href="https://github.com/jeremieGenet/Lecteur-video-React" target="_blank">
                         <button type="text" class="btn btn-info text-primary my-2 button_try"><strong>Le code sur mon GitHub</strong></button>
@@ -406,7 +418,7 @@ $path->getStyle("../css/dev/matrix.css");
                         Le portfolio est utilisé pour contenir les projets de démonstration du site!
                     </p>
                     <p>
-                        Pour cela, en javascript on créer un div cachée et qui s'affichera à l'évenement click.
+                        Pour cela, en <strong>Javascript</strong> on créer un div cachée et qui s'affichera à l'évenement click.
                         La <strong>difficulté</strong> ici était la gestion de l'affichage de la div, mais avec le calcul du scroll
                         et de la taille l'écran cela fonctionne parfaitement!
                     </p>

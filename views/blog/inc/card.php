@@ -28,7 +28,11 @@
             </p>
         </div>
         <div class="ml-auto">
-            <span class="react-like">
+            <!-- Les 2 Attributs du span donnent le nombre de like et si l'article est liké -->
+            <span class="react-like" 
+                data-likes="<?= $post->getLike() ?>"
+                data-is-liked="<?= $post->getIsLiked() ?>"
+            >
                 <!-- COMPOSANT REACT (voir js/blog/posts.js) -->
             </span>
         </div>

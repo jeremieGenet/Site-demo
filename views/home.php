@@ -21,27 +21,52 @@ $path->getStyle("../css/common/font-awesome/css/all.min.css");
         <div class="description">
             <div class="row">
                 <div class="col-md-4 surMoi">
-                    <h3 class="surMoi_title">En savoir plus sur moi</h3>
-                    <ul>
-                        <li>
-                            Présentation
-                        </li>
-                        <li>
-                            Expériences
-                        </li>
-                        <li>
-                            Formation
-                        </li>
-                        <li>
-                            Compétences
-                        </li>
-                        <li>
-                            Cv pdf
-                        </li>
-                        <li id="link_surMoi">
-                            <a href="<?= $router->generate('cv') ?>"><i class="fas fa-caret-square-right"> Voir le CV</i></a>
-                        </li>
-                    </ul>
+                    <!-- SUR MOI -->
+                    <h3 class="news_title">En savoir plus sur moi</h3>
+                    <div class="news">
+                        <ul>
+                            <li>
+                                Présentation
+                            </li>
+                            <li>
+                                Expériences
+                            </li>
+                            <li>
+                                Formation
+                            </li>
+                            <li>
+                                Compétences
+                            </li>
+                            <li>
+                                Cv pdf
+                            </li>
+                            <li id="link_surMoi">
+                                <a class="link" href="<?= $router->generate('cv') ?>"><i class="fas fa-caret-square-right"> Voir le CV</i></a>
+                            </li>
+                        </ul>
+                    </div>
+                        <!-- NOUVEAUTE / EN COURS... -->
+                        <h3 class="news_title">Nouveautés / A venir / En cours...</h3>
+                        <div class="news">
+                        <ul>
+                            <li>
+                                Un système de "like" sur les articles blog en 
+                                <strong>
+                                    <a class="link" href="<?= $router->generate('home_blog') ?>">REACT</a>
+                                </strong>
+                            </li>
+                            <li>
+                                Le retour de l'espace membre (refactorer en POO)
+                            </li>
+                            <li>
+                                Un jeu de shoot 2D en <strong>Lua</strong>
+                            </li>
+                            <li>
+                                Photo montage Typo avec <strong>Photoshop</strong>
+                            </li>
+                        </ul>
+                        
+                    </div>
                 </div>
                 <div class="col-md-8 description_text">
                     <h3 class="my-3">Présentation du site et de sa construction</h3>
@@ -92,7 +117,7 @@ $path->getStyle("../css/common/font-awesome/css/all.min.css");
                 <div class="row row-logo">
                     <div class="col-md-3 technos_dev">
                         <h3>Développement</h3>
-                        <a href="<?= $router->generate('portfolio_dev') ?>"><i class="fas fa-caret-square-right"> Voir les Réalisations</i></a>
+                        <a class="link" href="<?= $router->generate('portfolio_dev') ?>"><i class="fas fa-caret-square-right"> Voir les Réalisations</i></a>
                     </div>
                     <div class="col-md-9 technos_logos">
                         <div class="row">
@@ -177,7 +202,7 @@ $path->getStyle("../css/common/font-awesome/css/all.min.css");
                     <div class="col-md-3 design_text">
                         <h3>Design</h3>
                         
-                        <a href="<?= $router->generate('portfolio_design') ?>"> <i class="fas fa-caret-square-right"> Voir les Réalisations</i></a>
+                        <a class="link" href="<?= $router->generate('portfolio_design') ?>"> <i class="fas fa-caret-square-right"> Voir les Réalisations</i></a>
                     </div>
                     <div class="col-md-9 design_logos">
                         <div class="row">

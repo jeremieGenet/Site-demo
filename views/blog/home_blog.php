@@ -30,13 +30,13 @@ $query = $db->query("SELECT * FROM blog_post ORDER BY created_at DESC LIMIT $per
 // Permet de récup la requete sous forme de classe et on lui donne la classe que l'on veut récup, (PDO::FETCH_OBJ permet lui de récup la req sous forme d'objet)
 $posts = $query->fetchAll(PDO::FETCH_CLASS, Post::class); 
 
-dump($posts);
+//dump($posts);
 ?>
 
 
 
 
-<h1 class="title_home_blog">Liste des Articles</h1>
+<h1 class="title_home_blog">Articles du Blog</h1>
 
 <!-- PAGINATION (page suivante/précédente) -->
 <div class="d-flex justify-content-between my-4">
@@ -75,9 +75,12 @@ dump($posts);
 <!-- On import REACT et REACT-DOM -->
 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<!-- On import babel (transpillateur jsx)
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+ -->
 
-<?php
-// Script js pour le composant REACT 'like'
-$path->getJs("../js/blog/posts.js");
-?>
+<!-- Script js pour le composant REACT 'like' -->
+<script src="../js/blog/posts.js"></script>
+
+
 

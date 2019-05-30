@@ -38,7 +38,6 @@ if($category->getSlug() !== $slug){
 
 
 
-
 $title = "Categorie {$category->getName()}";
 
 /*
